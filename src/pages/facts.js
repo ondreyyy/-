@@ -13,7 +13,6 @@ export default function Facts() {
             })
             .catch((error) => console.error("Error fetching data:", error));
     }, []);
-
     return (
         <div style={styles.container}>
             <CoreNavbar ></CoreNavbar>
