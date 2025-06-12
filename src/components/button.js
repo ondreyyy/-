@@ -12,11 +12,11 @@ class Button extends Component {
   render() {
     const buttonStyle = {
       padding: "15px 30px",
-      backgroundColor: "#ff4f81",
-      color: "#fff",
+      backgroundColor: "#8b0000",
+      color: "#8b0000",
       fontSize: "1.2rem",
       fontWeight: "bold",
-      border: "2px solid #ff4f81",
+      border: "2px solid #8b0000",
       borderRadius: "12px",
       cursor: "pointer",
       boxShadow: "0 4px 12px rgba(0, 0, 0, 0.2)",
