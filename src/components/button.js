@@ -13,7 +13,7 @@ class Button extends Component {
     const buttonStyle = {
       padding: "15px 30px",
       backgroundColor: "#8b0000",
-      color: "#8b0000",
+      color: "#fff",
       fontSize: "1.2rem",
       fontWeight: "bold",
       border: "2px solid #8b0000",
@@ -60,7 +60,7 @@ class Button extends Component {
             e.target.style.borderColor = buttonStyle.border;
           }}
         >
-          💖 KLIKNI = pošleš lásku!
+          💖 KLIKNI = pošleš lásku! 💖
         </button>
 
         <div style={boxStyle}>
