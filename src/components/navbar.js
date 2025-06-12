@@ -24,10 +24,10 @@ function CoreNavbar() {
       >
         <Container>
           <Navbar.Brand
-            href="/"
+           
             style={{ fontFamily: "'Poppins', sans-serif", color: '#000' }}
           >
-            MENU
+            KOČIČÍ FAKTY
           </Navbar.Brand>
           <Nav className="me-auto">
             <Nav.Link

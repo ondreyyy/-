@@ -37,7 +37,6 @@ export default function About() {
         <h1 style={styles.title}>MŇAUKOVNÍ FAKTA O KOČIČKÁCH!</h1>
         <h2 style={styles.subtitle}>(a kočkové obrázky)</h2>
 
-        {}
         <img
           src={`https://http.cat/${statusCode}.jpg`}
           alt={`HTTP Cat ${statusCode}`}
@@ -47,17 +46,23 @@ export default function About() {
         />
 
         <p style={styles.subtitle}>Zajímavost o kočkách z internetu:</p>
-        <button style={styles.button}  className="button-hover" onClick={fetchFacts}>Nový fakt!</button>
+        <button style={styles.button} className="button-hover" onClick={fetchFacts}>
+          Nový fakt!
+        </button>
+
         <div style={styles.factsContainer}>
-          {facts.map((fact, index) => (
-            <div key={index} style={styles.factCard}>
-              {fact}
-            </div>
-          ))}
+          {facts.length === 0 ? (
+            <div style={styles.factCard}>Načítám kočičí fakta...</div>
+          ) : (
+            facts.map((fact, index) => (
+              <div key={index} style={styles.factCard}>
+                {fact}
+              </div>
+            ))
+          )}
         </div>
       </div>
 
-      {}
       {openImage && (
         <div style={styles.overlay} onClick={() => setOpenImage(false)}>
           <img
@@ -75,6 +80,7 @@ const styles = {
   container: {
     background: "linear-gradient(to right, #1e1e2f, #3a3a55, #2c2c44)",
     minHeight: "100vh",
+    overflow: "hidden",
     padding: "40px 20px",
     fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
     color: "#e0e0ff",
@@ -101,6 +107,8 @@ const styles = {
   image: {
     maxWidth: "500px",
     width: "80%",
+    height: "300px",
+    objectFit: "cover",
     borderRadius: "16px",
     boxShadow: "0 4px 20px rgba(187, 134, 252, 0.6)",
     marginBottom: "30px",
@@ -110,18 +118,28 @@ const styles = {
   factsContainer: {
     display: "flex",
     flexDirection: "column",
-    gap: "20px",
-    maxWidth: "600px",
-    margin: "0 auto",
+    justifyContent: "center",
+    alignItems: "center",
+    width: "100%",
+    maxWidth: "1000px",
+    minHeight: "140px",
+    marginBottom: "60px",
   },
   factCard: {
+    width: "100%",
+    maxWidth: "1000px",
+    minHeight: "140px",
     background: "rgba(187, 134, 252, 0.2)",
-    padding: "15px 20px",
+    padding: "20px 30px",
     borderRadius: "12px",
     boxShadow: "0 4px 10px rgba(187, 134, 252, 0.3)",
-    fontSize: "1rem",
+    fontSize: "1.1rem",
     fontWeight: "500",
     color: "#e0e0ff",
+    textAlign: "left",
+    overflow: "hidden",
+    textOverflow: "ellipsis",
+    whiteSpace: "normal",
   },
   button: {
     padding: "12px 25px",
